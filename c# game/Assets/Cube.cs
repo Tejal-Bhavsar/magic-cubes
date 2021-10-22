@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
+    public Rigidbody2D  myRigidBody2d;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Hello there magic cube");
-        Debug.Log("how you doing ....");
-        Debug.Log("ready for the stage show ?");
-
-        Debug.LogWarning("if you press the space nothing happenes");
-        Debug.LogError("if you smash keyboared nothing happese its currently not that active");
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow)){
-            print("up arrow is pressed");
-        }
+       if ( Input.GetKeyDown(KeyCode.UpArrow))
+       {
+           myRigidBody2d.velocity = new Vector2(0, 10f);
+       }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow)){
-            print("down arrow is pressed");
-        }
+        if ( Input.GetKeyDown(KeyCode.DownArrow))
+       {
+           myRigidBody2d.velocity = new Vector2(0, -10f);
+       }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow)){
-            print("left arrow is pressed");
-        }
+        if ( Input.GetKeyDown(KeyCode.RightArrow))
+       {
+           myRigidBody2d.velocity = new Vector2(10f, 0f);
+       }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow)){
-            print("right arrow is pressed");
-        }
+        if ( Input.GetKeyDown(KeyCode.LeftArrow))
+       {
+           myRigidBody2d.velocity = new Vector2(-10, 0f);
+       }
     }
 }
